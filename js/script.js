@@ -266,7 +266,8 @@ let slideIndex = 3,  // Какой слайд показываем по умол
         totalValue = document.getElementById("total"),
         personsSum = 0,
         daysSum = 0,
-        total = 0;
+        total = 0,
+        sum = 0;
 
     totalValue.innerHTML = 0;
 
@@ -275,7 +276,7 @@ let slideIndex = 3,  // Какой слайд показываем по умол
         total = (daysSum + personsSum)*4000;
 
         //Проверяем заполнено ли поле количество дней, если нет, то сумму не меняем
-        if(restDays.value =="") {
+        if(restDays.value =="" || persons.value =="" ) {
             totalValue.innerHTML = 0;
         } else {
             totalValue.innerHTML = total;
@@ -287,7 +288,7 @@ let slideIndex = 3,  // Какой слайд показываем по умол
         daysSum = +this.value; //Получаем что ввел пользователь в поле с днями
         total = (daysSum + personsSum)*4000;
 
-        if(persons.value =="") {
+        if(persons.value =="" || restDays.value =="") {
             totalValue.innerHTML = 0;
         } else {
             totalValue.innerHTML = total;
